@@ -235,7 +235,7 @@ async def analyze_plagiarism(
     
     try:
         result = subprocess.run(
-            ['python', str(ROOT_DIR / 'plagiarism_detector.py'), files_json, str(request.threshold)],
+            ['/root/.venv/bin/python', str(ROOT_DIR / 'plagiarism_detector.py'), files_json, str(request.threshold)],
             capture_output=True,
             text=True,
             timeout=300
