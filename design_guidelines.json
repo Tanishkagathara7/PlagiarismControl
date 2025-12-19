@@ -1,0 +1,140 @@
+{
+  "identity": {
+    "name": "PlagiarismControl",
+    "archetype": "Swiss Control Room",
+    "vibe": "Objective, Precise, Academic, High-Contrast",
+    "description": "A forensic tool for academic integrity. It doesn't judge; it reveals. The design should feel like a high-end laboratory instrument—clean, sterile, and incredibly precise."
+  },
+  "typography": {
+    "primary_font": "Manrope",
+    "heading_font": "Azeret Mono",
+    "code_font": "JetBrains Mono",
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;700&display=swap",
+    "usage": {
+      "h1": "font-mono font-semibold text-4xl tracking-tight text-slate-900 dark:text-slate-50",
+      "h2": "font-mono font-medium text-2xl tracking-tight text-slate-800 dark:text-slate-100",
+      "h3": "font-sans font-bold text-lg text-slate-700 dark:text-slate-200",
+      "body": "font-sans text-base leading-relaxed text-slate-600 dark:text-slate-400",
+      "code": "font-code text-sm bg-slate-100 dark:bg-slate-800 p-1 rounded",
+      "label": "font-mono text-xs uppercase tracking-widest text-slate-500"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "name": "Academic Indigo",
+        "hex": "#312e81",
+        "tailwind": "indigo-900",
+        "usage": "Primary actions, active states, branding"
+      },
+      "secondary": {
+        "name": "Paper White",
+        "hex": "#f8fafc",
+        "tailwind": "slate-50",
+        "usage": "Backgrounds, cards"
+      },
+      "accent": {
+        "name": "Electric Blue",
+        "hex": "#3b82f6",
+        "tailwind": "blue-500",
+        "usage": "Focus rings, active tabs, links"
+      },
+      "danger": {
+        "name": "Signal Red",
+        "hex": "#e11d48",
+        "tailwind": "rose-600",
+        "usage": "High plagiarism (>70%), error states"
+      },
+      "warning": {
+        "name": "Caution Amber",
+        "hex": "#d97706",
+        "tailwind": "amber-600",
+        "usage": "Medium plagiarism (40-70%)"
+      },
+      "success": {
+        "name": "Clear Emerald",
+        "hex": "#059669",
+        "tailwind": "emerald-600",
+        "usage": "Low plagiarism (<40%), success toasts"
+      }
+    },
+    "gradients": {
+      "hero": "bg-gradient-to-br from-slate-50 to-slate-200 dark:from-slate-950 dark:to-slate-900",
+      "card_hover": "hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200"
+    }
+  },
+  "layout_strategies": {
+    "dashboard_grid": {
+      "name": "The Control Room",
+      "classes": "grid grid-cols-1 md:grid-cols-12 gap-6 p-6",
+      "areas": {
+        "stats": "col-span-full md:col-span-12 grid grid-cols-1 md:grid-cols-4 gap-4",
+        "main_list": "col-span-full md:col-span-4 h-[calc(100vh-200px)] overflow-y-auto",
+        "detail_view": "col-span-full md:col-span-8 h-[calc(100vh-200px)] overflow-y-auto border-l border-slate-200 pl-6"
+      }
+    },
+    "landing_page": {
+      "name": "The Tetris Grid",
+      "classes": "grid grid-cols-1 md:grid-cols-12 gap-8 max-w-7xl mx-auto px-4 py-12",
+      "hero_span": "col-span-full md:col-span-7 flex flex-col justify-center",
+      "visual_span": "col-span-full md:col-span-5 relative h-[500px]"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-indigo-900 text-white hover:bg-indigo-800 rounded-none px-6 py-3 font-mono text-sm uppercase tracking-wider transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]",
+      "secondary": "bg-white text-slate-900 border-2 border-slate-900 hover:bg-slate-50 rounded-none px-6 py-3 font-mono text-sm uppercase tracking-wider transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]",
+      "ghost": "text-slate-600 hover:text-indigo-900 hover:bg-slate-100 rounded px-4 py-2 font-sans font-medium"
+    },
+    "cards": {
+      "base": "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md transition-shadow",
+      "stat": "flex flex-col justify-between h-32 border-l-4 border-indigo-900 bg-slate-50 p-4"
+    },
+    "inputs": {
+      "base": "flex h-10 w-full rounded-md border border-slate-300 bg-transparent px-3 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-900 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-mono"
+    },
+    "diff_viewer": {
+      "container": "font-code text-sm border border-slate-200 rounded-lg overflow-hidden",
+      "line_added": "bg-emerald-50 text-emerald-900 border-l-4 border-emerald-500",
+      "line_removed": "bg-rose-50 text-rose-900 border-l-4 border-rose-500",
+      "line_number": "select-none text-slate-400 text-right pr-4 border-r border-slate-200 bg-slate-50 w-12 inline-block"
+    }
+  },
+  "visual_assets": {
+    "hero_image": {
+      "url": "https://images.unsplash.com/photo-1760239037245-a372db8630f3?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Abstract geometric data visualization",
+      "usage": "Landing page hero section, right side"
+    },
+    "auth_background": {
+      "url": "https://images.unsplash.com/photo-1597920940566-a77511f9327d?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "University library shelves",
+      "usage": "Background for login/signup pages with a heavy dark overlay (bg-slate-900/90)"
+    },
+    "empty_state": {
+      "url": "https://images.unsplash.com/photo-1756756737087-338ffff92906?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Abstract lines",
+      "usage": "Empty state for dashboard when no files are uploaded"
+    }
+  },
+  "motion": {
+    "page_transition": {
+      "initial": { "opacity": 0, "y": 20 },
+      "animate": { "opacity": 1, "y": 0 },
+      "exit": { "opacity": 0, "y": -20 },
+      "transition": { "duration": 0.3, "ease": "easeOut" }
+    },
+    "hover_lift": "transition-transform duration-200 hover:-translate-y-1"
+  },
+  "universal_guidelines": [
+    "DO NOT use gradients for text or backgrounds unless specified.",
+    "Use 'Manrope' for all UI text and 'Azeret Mono' for all headings.",
+    "All interactive elements must have a 'data-testid'.",
+    "Use 'sonner' for toast notifications.",
+    "Ensure all charts are accessible to color-blind users (use patterns or high contrast).",
+    "The 'Upload' area should feel tactile—use dashed borders and hover states.",
+    "Code diffs must be monospaced and clearly color-coded.",
+    "Avoid 'cute' illustrations. Keep it professional and academic."
+  ],
+  "instructions_to_main_agent": "You are building a serious academic tool. Focus on data density and clarity. The 'Control Room' layout is key—users need to see the big picture and the details simultaneously. Use the provided image URLs for the landing and auth pages. Implement the 'Control Room' grid for the main dashboard. Ensure the diff viewer is robust and easy to read."
+}
