@@ -95,6 +95,11 @@ async def verify_token(credentials: HTTPAuthorizationCredentials = Depends(secur
         raise HTTPException(status_code=401, detail="Invalid token")
 
 
+@api_router.get("/")
+async def root():
+    return {"message": "PlagiarismControl API", "status": "running"}
+
+
 @api_router.post("/auth/register")
 async def register_admin(admin: AdminCreate):
     existing = await db.admins.find_one({"username": admin.username})
