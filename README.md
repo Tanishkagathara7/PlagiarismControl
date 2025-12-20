@@ -2,38 +2,23 @@
 
 A powerful, standalone code similarity detection tool for analyzing Jupyter notebooks with advanced plagiarism detection capabilities.
 
-[![Deploy Backend](https://railway.app/button.svg)](https://railway.app/new/template)
-[![Deploy Frontend](https://vercel.com/button)](https://vercel.com/new/clone)
-
 ## 🌟 Features
 
 - 📁 **File Management**: Upload and manage up to 300 Jupyter notebook files
 - 🚀 **Bulk Upload**: Drag & drop support for multiple files
 - 🔬 **Advanced Detection**: TF-IDF and cosine similarity analysis
 - 🧹 **Code Normalization**: Removes comments and normalizes variables
-- 📊 **Detailed Analysis**: Line-by-line comparison with similarity scores
-- 📄 **Export**: Generate PDF reports
+- � ***Detailed Analysis**: Line-by-line comparison with similarity scores
+- � ***Export**: Generate PDF reports
 - 🔐 **Secure**: JWT-based authentication system
 - ⚙️ **Configurable**: Adjustable similarity thresholds
-- 📈 **Analytics**: Dashboard with charts and trends
-
-## 🚀 Quick Deploy (Cloud)
-
-### Option 1: One-Click Deploy
-
-1. **Backend**: Click [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
-2. **Frontend**: Click [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone)
-
-### Option 2: Manual Deploy
-
-Follow the detailed [Deployment Guide](DEPLOYMENT_GUIDE.md) for step-by-step instructions.
+- � ***Analytics**: Dashboard with charts and trends
 
 ## 💻 Local Development
 
 ### Prerequisites
 
-- Python 3.8+
-- Node.js 16+ and npm/yarn
+- Node.js 16+ and npm
 - MongoDB Atlas account
 
 ### 1. Configure Database
@@ -45,11 +30,11 @@ JWT_SECRET_KEY="your-secret-key"
 CORS_ORIGINS="*"
 ```
 
-### 2. Start Backend
+### 2. Start Backend (Node.js)
 ```bash
 cd backend
-pip install -r requirements.txt
-uvicorn server:app --reload --host 127.0.0.1 --port 8000
+npm install
+npm start
 ```
 
 ### 3. Start Frontend
@@ -61,8 +46,8 @@ npm start
 
 ### 4. Access Application
 - **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8000
-- **API Documentation**: http://localhost:8000/docs
+- **Backend API**: http://localhost:8000/api
+- **API Documentation**: Available via API endpoints
 
 ## 📖 Usage Guide
 
@@ -76,10 +61,10 @@ npm start
 ## 🛠️ Technology Stack
 
 ### Backend
-- **Framework**: FastAPI (Python)
+- **Framework**: Express.js (Node.js)
 - **Database**: MongoDB Atlas
 - **Authentication**: JWT tokens
-- **Analysis**: scikit-learn, TF-IDF, Cosine Similarity
+- **Analysis**: Natural language processing, String similarity
 - **File Processing**: Jupyter notebook parsing
 
 ### Frontend
@@ -94,7 +79,7 @@ npm start
 
 - **Code Extraction**: Parses Jupyter notebooks to extract Python code
 - **Normalization**: Removes comments, docstrings, and normalizes variable names
-- **Similarity Detection**: Uses TF-IDF vectorization and cosine similarity
+- **Similarity Detection**: Uses multiple similarity algorithms including string similarity and token-based analysis
 - **Threshold Configuration**: Adjustable similarity thresholds (30-90%)
 - **Detailed Reporting**: Line-by-line comparison with similarity scores
 - **Bulk Analysis**: Process multiple files simultaneously
@@ -122,32 +107,41 @@ ENABLE_HEALTH_CHECK=false
 
 ```
 PlagiarismControl-main/
-├── backend/                 # FastAPI backend
-│   ├── server.py           # Main server file
-│   ├── plagiarism_detector.py  # Analysis engine
-│   ├── requirements.txt    # Python dependencies
+├── backend/                 # Express.js backend
+│   ├── server.js           # Main server file
+│   ├── plagiarism-detector.js  # Analysis engine
+│   ├── utils.js           # Utility functions
+│   ├── package.json       # Node.js dependencies
 │   ├── Dockerfile         # Docker configuration
 │   └── uploads/           # File storage
 ├── frontend/               # React frontend
 │   ├── src/               # Source code
 │   ├── public/            # Static files
 │   ├── package.json       # Node dependencies
-│   └── vercel.json        # Vercel configuration
-├── DEPLOYMENT_GUIDE.md     # Cloud deployment guide
+│   └── build/             # Production build
 └── README.md              # This file
 ```
 
-## 🚀 Deployment Options
+## 🚀 Quick Start
 
-### Cloud Platforms
-- **Backend**: Railway, Render, Heroku
-- **Frontend**: Vercel, Netlify, GitHub Pages
-- **Database**: MongoDB Atlas (free tier available)
+### Windows
+Run the batch file to start both servers:
+```bash
+start_project.bat
+```
 
-### Self-Hosted
-- Docker containers
-- VPS with nginx
-- Local server setup
+### Manual Start
+```bash
+# Backend
+cd backend
+npm install
+npm start
+
+# Frontend (in new terminal)
+cd frontend
+npm install
+npm start
+```
 
 ## 🔒 Security Features
 
@@ -157,14 +151,15 @@ PlagiarismControl-main/
 - Input validation
 - File type restrictions
 - Upload size limits
+- Rate limiting
 
 ## 📈 Performance
 
 - Optimized for up to 300 files
-- Efficient TF-IDF vectorization
+- Efficient similarity algorithms
 - Async database operations
 - Chunked file processing
-- Caching for repeated analyses
+- Memory-efficient processing
 
 ## 🤝 Contributing
 
@@ -180,11 +175,10 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
-- 📖 [Deployment Guide](DEPLOYMENT_GUIDE.md)
-- 🐛 [Issue Tracker](https://github.com/your-username/plagiarism-control/issues)
+- � [Issue Tracker](https://github.com/your-username/plagiarism-control/issues)
 - 📧 Email: support@yourapp.com
 
-## 🎯 Roadmap
+## � Ruoadmap
 
 - [ ] Support for more file formats (.py, .java, .cpp)
 - [ ] Advanced similarity algorithms
@@ -195,6 +189,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**🎉 Ready to detect plagiarism? Deploy now and start analyzing!**
-
-[![Deploy Backend](https://railway.app/button.svg)](https://railway.app/new/template) [![Deploy Frontend](https://vercel.com/button)](https://vercel.com/new/clone)
+**🎉 Ready to detect plagiarism? Start analyzing with Node.js backend!**

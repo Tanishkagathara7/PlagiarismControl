@@ -1,18 +1,15 @@
-FROM python:3.11-slim
+FROM node:18-alpine
 
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    g++ \
-    && rm -rf /var/lib/apt/lists/*
+# Install system dependencies for native modules
+RUN apk add --no-cache python3 make g++
 
-# Copy requirements first for better caching
-COPY requirements.txt .
+# Copy package files first for better caching
+COPY package*.json ./
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Node.js dependencies
+RUN npm ci --only=production
 
 # Copy application code
 COPY . .
@@ -23,5 +20,5 @@ RUN mkdir -p uploads
 # Expose port
 EXPOSE 8000
 
-# Command to run the application
-CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start the server
+CMD ["node", "server.js"]
